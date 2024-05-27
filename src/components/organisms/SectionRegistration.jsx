@@ -25,10 +25,10 @@ function SectionResgitration() {
 
         const nuevoRegistro = { nombre, apellido, curp, edad, tutor };
         list.push(nuevoRegistro);
-        setRegistros([...registros, nuevoRegistro]); 
+        setRegistros(list.toArray());
     };
 
-    const view = (event) => {
+    const mostrar = (event) => {
         let content = '<h3>Alumnos registrados:</h3>';
         if (list.isEmpty()) {
             content += '<p>No hay alumnos inscritos.</p>';
@@ -69,7 +69,7 @@ function SectionResgitration() {
             <Field type="number" placeholder="18" text="Edad:" val ={edad} fnVal={setEdad}/>
             <Field type="text" placeholder="Nombre del tutor" text="Tutor:" val ={tutor} fnVal={setTutor}/>
             <Button title="REGISTRAR DATOS" onclick={handlerClick} />
-            <Button id='view-transfer' title="MOSTRAR REGISTROS" onclick={view} />
+            <Button id='mostrar-registros' title="MOSTRAR REGISTROS" onclick={mostrar} />
             </div> 
 
             <div id='registros'></div>

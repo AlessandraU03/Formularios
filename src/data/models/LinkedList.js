@@ -40,4 +40,14 @@ export class LinkedList {
     size() {
         return this.#count;
     }
+
+    toArray() {
+        const arr = [];
+        let current = this.#head;
+        while (current != null) {
+            arr.push(current.data);
+            current = current.next;
+        }
+        return arr;
+    }
 }
